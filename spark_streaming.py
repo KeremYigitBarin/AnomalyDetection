@@ -18,7 +18,7 @@ schema = StructType([
     StructField("Anomaly", StringType(), True)
 ])
 
-# Kafka'dan veri almak
+# Kafka'dan veri alma
 kafka_df = spark.readStream.format("kafka").option("kafka.bootstrap.servers", "localhost:9092") \
     .option("subscribe", "anomaly_data").load()
 
